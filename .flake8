@@ -1,0 +1,5 @@
+[flake8]
+ignore = F,E501,E722,E701,W503,E704,C901,E402,E203
+max-complexity = 10
+extend-exclude =
+    .venv/,
