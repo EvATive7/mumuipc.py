@@ -11,9 +11,18 @@ logger = logging.getLogger("mumuipc.py")
 
 
 class MuMuPlayer:
-    def __init__(self, path: Path, index):
+    def __init__(self, path: Path, index, type_="v4"):
+        """Initialize the MuMuPlayer instance.
+        Args:
+            path: Path to the MuMuPlayer directory.
+            type_: Type of the MuMuPlayer instance. Defaults to "v4". Aval = ["v4", "v5"]
+            index: Index of the MuMuPlayer instance.
+        """
         _path = path
-        _dll_path = path / "shell" / "sdk" / "external_renderer_ipc.dll"
+        if type_ == "v4":
+            _dll_path = path / "shell" / "sdk" / "external_renderer_ipc.dll"
+        elif type_ == "v5":
+            _dll_path = path / "nx_main" / "sdk" / "external_renderer_ipc.dll"
 
         self._path = str(path.absolute())
         self._dll_path = str(_dll_path.absolute())
