@@ -1,6 +1,6 @@
 [build-system]
 build-backend = "setuptools.build_meta"
-requires = ["setuptools", "wheel"]
+requires = ["setuptools", "wheel", "setuptools-scm"]
 
 [project]
 authors = [{ name = "EvATive7" }]
@@ -13,7 +13,7 @@ description = "Python SDK for MumuPlayer IPC."
 name = "mumuipc.py"
 readme = "README.md"
 requires-python = ">=3.6"
-version = "0.0.2"
+dynamic = ['version']
 
 [project.optional-dependencies]
 dev = ["black", "isort", "flake8", "pytest", "pre-commit"]
@@ -32,3 +32,8 @@ profile = "black"
 
 [tool.setuptools.package-dir]
 "" = "src"
+
+
+[tool.setuptools_scm]
+version_scheme = "post-release"
+local_scheme = "node-and-date"
